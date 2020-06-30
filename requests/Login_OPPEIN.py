@@ -38,7 +38,7 @@ def change_password(login_url, test_url, headers, formhash):
         test_response = session.get(test_url, headers=headers)  # test_response 用于验证是否登录成功。
 
         # 验证是否登录成功
-        if "邱显昌" in test_response.text:
+        if "清远基地" in test_response.text:
             print("登录成功")
         #     while True:
         #         new_password = input("请输入新的登录密码：")
