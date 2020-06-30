@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".div1").append("<p>this is new line</p>");
+            $("body").append("<div class=\"div1\">\n" +
+                "        这是一5435435342" +
+                "    </div>");
+        })
+    </script>
+</head>
+<body>
+    <p class="div1">hello html</p>
+    <input type="text" placeholder="请输入用户名">
+    <div class="div1">
+        这是一个1
+    </div>
+
+    <div class="div2">
+        这是一2
+    </div>
+</body>
+</html>
