@@ -1,8 +1,3 @@
-# 测试网址：https://www.yaozh.com/
-# 测试账号：qq896944660
-# 初始密码：123456
-# 请各位同胞手下留情，玩耍完之后请将密码更改为初始密码，以便以下一位同胞也能地愉快玩耍！！！！
-
 import requests, re
 
 
@@ -26,6 +21,7 @@ def change_password(login_url, test_url, headers, formhash):
         password = input(password_prompt)
         # 登录账号所需要传输的数据
         form_data = {}
+        form_data1={}
         form_data["systemld"]="OPPEIN.COM"
         form_data["username"] = name
         form_data["password"] = password
@@ -33,12 +29,12 @@ def change_password(login_url, test_url, headers, formhash):
         form_data["execution"] = formhash
         form_data["_eventld"]="submit"
         form_data["geolocation"] = ""
-
+        form_data1["CheckCardCode"]="KHK2020010200051"
         login_response = session.post(login_url, headers=headers, data=form_data)
-        test_response = session.get(test_url, headers=headers)  # test_response 用于验证是否登录成功。
+        test_response = session.get(test_url, headers=headers,data=form_data1)  # test_response 用于验证是否登录成功。
 
         # 验证是否登录成功
-        if "清远基地" in test_response.text:
+        if "绩效考核" in test_response.text:
             print("登录成功")
         #     while True:
         #         new_password = input("请输入新的登录密码：")
@@ -64,7 +60,7 @@ def change_password(login_url, test_url, headers, formhash):
 
 def main():
     login_url = "http://opsso.oppein.com/sso/login?service=http://oa.oppein.com/Login2016.aspx"
-    test_url = "http://oa.oppein.com/2016App/BG/TX/AddressBookViewNew.aspx?MValue=AddressBookViewNew"
+    test_url = "http://oa.oppein.com/2016App/HR/JX/FrmCheckedCardScoreViewV1.aspx?CheckCardCode=KHK2020010200051"
 
     headers = {}
     headers[
