@@ -1,4 +1,8 @@
-﻿<html><head>
+from scrapy import Selector
+
+html="""
+
+<html><head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta http-equiv="Content-Type" content="text/html; charset=gbk">
@@ -442,10 +446,10 @@ window.cfg.isJobview = '1';
         <div class="in">
             <a href="//www.51job.com"><img class="logo" id="logo" width="90" height="40" src="//img06.51jobcdn.com/im/2016/logo/logo_blue.png" alt="前程无忧"></a>
                                                                                 <img class="slogen" id="slogen" width="162" height="17" src="//img01.51jobcdn.com/im/2016/header/slogen.png?1544426366">
-
+                            
             <!-- Jobs频道使用 start -->
                         <!-- Jobs频道使用 end -->
-
+            
 <p class="nlink">
     <a class="" href="//www.51job.com/">首页</a>
     <a class="on" href="https://search.51job.com">职位搜索</a>
@@ -508,7 +512,7 @@ window.cfg.isJobview = '1';
                 <button class="p_but" type="button" onclick="search($('#kwdselectid').val(),1)">搜&nbsp;索</button>
             </div>
         <!--搜索条件 END-->
-
+    
 
     <!--关键字推荐-->
             <div class="dw_recommend">
@@ -531,9 +535,9 @@ window.cfg.isJobview = '1';
 
 
     <!--根据关键字和城市展示的广告-->
-
+    
     <!--过滤条件-->
-
+                    
     <div class="dw_filter ">
                     <div class="el mk" id="filter_issuedate">
         <span class="title">发布日期：</span>
@@ -898,7 +902,7 @@ window.cfg.isJobview = '1';
 
 
 
-
+                                                                
         <div class="rt order_time">
             <em class="dicon Dm "></em><a track-type="searchTrackButtonClick" event-type="16" href="https://search.51job.com/list/020000,000000,0000,00,9,99,python,2,1.html?lang=c&amp;postchannel=0000&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;ord_field=1&amp;dibiaoid=0&amp;line=&amp;welfare=">发布时间</a>
         </div>
@@ -1645,7 +1649,7 @@ window.cfg.isJobview = '1';
                                                                                                 <li><a href="https://search.51job.com/list/020000,000000,0000,00,9,99,python,2,4.html?lang=c&amp;postchannel=0000&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;ord_field=0&amp;dibiaoid=0&amp;line=&amp;welfare=">4</a></li>
                                                                                                 <li><a href="https://search.51job.com/list/020000,000000,0000,00,9,99,python,2,5.html?lang=c&amp;postchannel=0000&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;ord_field=0&amp;dibiaoid=0&amp;line=&amp;welfare=">5</a></li>
                                                                                                 <li><a href="https://search.51job.com/list/020000,000000,0000,00,9,99,python,2,6.html?lang=c&amp;postchannel=0000&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;ord_field=0&amp;dibiaoid=0&amp;line=&amp;welfare=">6</a></li>
-
+                                            
                                             <li class="bk"><a href="https://search.51job.com/list/020000,000000,0000,00,9,99,python,2,2.html?lang=c&amp;postchannel=0000&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;ord_field=0&amp;dibiaoid=0&amp;line=&amp;welfare=">下一页</a></li>
                                     </ul>
                 <input type="hidden" id="hidTotalPage" value="136">
@@ -1698,7 +1702,7 @@ window.cfg.isJobview = '1';
                     <li class="st_one"><a target="_blank" href="//www.51job.com/hengyang">衡阳招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/xiangtan">湘潭招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/changde">常德招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/liuzhou">柳州招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/chengdu">成都招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/chongqing">重庆招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/guiyang">贵阳招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/kunming">昆明招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/mianyang">绵阳招聘</a></li>                </ul>
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
                     <li class="st_one"><a target="_blank" href="//www.51job.com/urumqi">乌鲁木齐招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/xian">西安招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/lanzhou">兰州招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/xianyang">咸阳招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/yinchuan">银川招聘</a></li>                </ul>
-
+            
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
                     <li class="st_one"><a target="_blank" href="//www.51job.com/baotou">包头人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/shijiazhuang">石家庄人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/tianjin">天津人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/taiyuan">太原人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/huhhot">呼和浩特人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/baoding">保定人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/langfang">廊坊人才网</a></li>                </ul>
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
@@ -1727,7 +1731,7 @@ window.cfg.isJobview = '1';
                     <li class="st_one"><a target="_blank" href="//www.51job.com/liuzhou">柳州人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/chengdu">成都人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/chongqing">重庆人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/guiyang">贵阳人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/kunming">昆明人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/mianyang">绵阳人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/urumqi">乌鲁木齐人才网</a></li>                </ul>
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
                     <li class="st_one"><a target="_blank" href="//www.51job.com/xian">西安人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/lanzhou">兰州人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/xianyang">咸阳人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/yinchuan">银川人才网</a></li>                </ul>
-
+                
                                                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
                     <li class="st_one"><a target="_blank" href="//www.51job.com/baotou">包头招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/shijiazhuang">石家庄招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/tianjin">天津招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/taiyuan">太原招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/huhhot">呼和浩特招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/baoding">保定招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/langfang">廊坊招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/qinhuangdao">秦皇岛招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/tangshan">唐山招聘</a></li>                </ul>
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
@@ -1750,7 +1754,7 @@ window.cfg.isJobview = '1';
                     <li class="st_one"><a target="_blank" href="//www.51job.com/hengyang">衡阳招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/xiangtan">湘潭招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/changde">常德招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/liuzhou">柳州招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/chengdu">成都招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/chongqing">重庆招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/guiyang">贵阳招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/kunming">昆明招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/mianyang">绵阳招聘</a></li>                </ul>
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
                     <li class="st_one"><a target="_blank" href="//www.51job.com/urumqi">乌鲁木齐招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/xian">西安招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/lanzhou">兰州招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/xianyang">咸阳招聘</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/yinchuan">银川招聘</a></li>                </ul>
-
+            
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
                     <li class="st_one"><a target="_blank" href="//www.51job.com/baotou">包头人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/shijiazhuang">石家庄人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/tianjin">天津人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/taiyuan">太原人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/huhhot">呼和浩特人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/baoding">保定人才网</a></li><li class="st_one"><a target="_blank" href="//www.51job.com/langfang">廊坊人才网</a></li>                </ul>
                             <ul><li style="font-size:14px;color:#666;">地区人才网招聘</li>
@@ -1902,3 +1906,10 @@ window.cfg.isJobview = '1';
 </div>
 
 </body></html>
+"""
+
+from scrapy import  Selector
+
+sel=Selector(text=html)
+tag=sel.xpath("//*[@id='resultList']/div[4]/p/span/a/text()").extract()
+pass
