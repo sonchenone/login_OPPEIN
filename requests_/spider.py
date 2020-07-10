@@ -2,7 +2,7 @@ import re
 import ast
 import requests
 from urllib import parse
-
+from scrapy import Selector
 
 domain="https://bbs.csdn.net"
 def get_node_json():
@@ -48,7 +48,18 @@ def get_last_urls():
         all_urls.append(parse.urljoin(domain,url+"/closed"))
     return all_urls
 
+def parse_list():
+    res_text=requests.get("https://bbs.csdn.net/forums/J2ME").text
+    sel = Selector(text=res_text)
+    all_trs = sel.xpath("//table[@class='forums_tab_table']//tr")[2:]
+    for tr in all_trs:
+        status=tr.xpath("//td[1]/span/text()").extract()[0]
+        socre = tr.xpath("//td[1]/em/text()").extract()[0]
+        print(status)
+
+    pass
 if __name__=="__main__":
     last_urls=get_last_urls()
+    parse_list()
     print(last_urls)
     print(len(last_urls))
